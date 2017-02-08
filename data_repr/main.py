@@ -38,24 +38,39 @@ def test_float_format():
 
 def main():
     '''main'''
-    print("Testing floating-point numbers")
-    x = 1.0
-    p = 0
-    while x != x + 1:
-        x *= 2
-        p += 1
-    print("x = {}; p = {}".format(x, p))
+    print("# Testing floating-point numbers #")
+    print("## Simple test ##")
+    mant_ = 1.0
+    exp_ = 0
+    while mant_ != mant_ + 1:
+        mant_ = mant_ * 2
+        exp_ = exp_ + 1
+    print("mantissa = {}; exponent = {}".format(mant_, exp_))
+    print()
+    print("## Storing decimals ##")
     test_float_format()
+    print()
+    print("## Comparing decimals ##")
     test_float()
-    print("Integers representation")
-    #'18014398509481985'
-    print('3602879701896397 * 5 = {:d}'.format(3602879701896397 * 5))
-    #'18014398509481984.000000'
-    print('3602879701896397 * 5 = {:f}'.format(3602879701896397 * 5))
-    print("log2(3602879701896397 * 5) = {}".format(math.log2(3602879701896397 * 5)))
-    print('18014398509481984 / 2**55 = {:f}'.format(18014398509481984 / 2**55))
-    print('18014398509481985 / 2**55 = {:f}'.format(18014398509481984 / 2**55))
-    print("Smallest increment is {}".format(sys.float_info.epsilon))
+    print()
+    print("## 0.1 * 5 == 0.5 paradox ##")
+    one_tenth = 0.1.as_integer_ratio()
+    print("0.1 = {} / {}".format(one_tenth[0], one_tenth[1]))
+    print("log2({}) = {}".format(one_tenth[1], math.log2(one_tenth[1])))
+    print('{} * 5 = {:d}'.format(one_tenth[0], one_tenth[0] * 5)) #'18014398509481985'
+    print('{} * 5 = {:f}'.format(one_tenth[0], one_tenth[0] * 5)) #'18014398509481984.000000'
+    print("log2({} * 5) = {}".format(one_tenth[0], math.log2(one_tenth[0] * 5)))
+    magic_number = one_tenth[0] * 5
+    print("{} has {} binary digits".format(magic_number, math.log2(magic_number)))
+    print('{} / 2**55 == 0.5 is {}'.format(magic_number - 3, (magic_number - 3) / 2**55 == 0.5))
+    print('{} / 2**55 == 0.5 is {}'.format(magic_number - 2, (magic_number - 2) / 2**55 == 0.5))
+    print('{} / 2**55 == 0.5 is {}'.format(magic_number - 1, (magic_number - 1) / 2**55 == 0.5))
+    print('{} / 2**55 == 0.5 is {}'.format(magic_number, (magic_number) / 2**55 == 0.5))
+    print('{} / 2**55 == 0.5 is {}'.format(magic_number + 1, (magic_number + 1) / 2**55 == 0.5))
+    print('{} / 2**55 == 0.5 is {}'.format(magic_number + 2, (magic_number + 2) / 2**55 == 0.5))
+    print('{} / 2**55 == 0.5 is {}'.format(magic_number + 3, (magic_number + 3) / 2**55 == 0.5))
+    #print("Smallest increment is {}".format(sys.float_info.epsilon))
+    print('---')
     print("Over and out.")
 
 
