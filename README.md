@@ -7,7 +7,7 @@ This is a public repository for CS450.
 - [Voltage, Current, Resistance, and Ohm's Law - learn.sparkfun.com](https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law)
 - [Arduino - Foundations](https://www.arduino.cc/en/Tutorial/Foundations)
 - [Adafruit Learning System](https://learn.adafruit.com/series/learn-arduino)
-- [37-piece-sensor-description.pdf](https://katie.luther.edu/pluginfile.php/339520/mod_page/content/4/37-piece-sensor-description.pdf)
+- [Elektor's Arduino 37 in 1 Sensor kit](https://www.modmypi.com/download/37-piece-sensor-description.pdf)
 - [Arduino 37 sensors - TkkrLab](https://tkkrlab.nl/wiki/Arduino_37_sensors)
 
 ## Raspberry Pi
