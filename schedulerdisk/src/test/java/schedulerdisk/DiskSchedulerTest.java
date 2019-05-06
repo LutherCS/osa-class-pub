@@ -9,6 +9,15 @@ import static org.junit.Assert.*;
 import org.junit.Ignore;
 
 /**
+* These imports required to create timeout rule that does
+* not interfere with debugging.
+*/
+import org.junit.Rule;
+import org.junit.rules.DisableOnDebug;
+import org.junit.rules.TestRule;
+import org.junit.rules.Timeout;
+
+/**
  *
  * @author yasiro01
  */
@@ -43,9 +52,18 @@ public class DiskSchedulerTest {
     }
 
     /**
+     * Timeout rule (test will fail if it runs for > 1000
+     * milliseconds) that is excluded on debug. Debugging
+     * won't cause the test to fail on timeout.
+     * REPLACES: @Test(timeout=1000) TO @Test()
+     */
+    @Rule
+    public TestRule timeout = new DisableOnDebug(Timeout.seconds(1));
+
+    /**
      * Test of getTotalMoves method, of class DiskScheduler.
      */
-    @Test(timeout=1000)
+    @Test()
     public void testGetTotalMoves() {
         System.out.println("getTotalMoves");
 
@@ -56,7 +74,7 @@ public class DiskSchedulerTest {
     /**
      * Test of useFCFS method, of class DiskScheduler.
      */
-    @Test(timeout=1000)
+    @Test()
     public void testUseFCFS() {
         System.out.println("useFCFS");
 
@@ -70,7 +88,7 @@ public class DiskSchedulerTest {
     /**
      * Test of useSSTF method, of class DiskScheduler.
      */
-    @Test(timeout=1000)
+    @Test()
     public void testUseSSTF() {
         System.out.println("useSSTF");
 
@@ -84,7 +102,7 @@ public class DiskSchedulerTest {
     /**
      * Test of useLOOK method, of class DiskScheduler.
      */
-    @Test(timeout=1000)
+    @Test()
     public void testUseLOOK() {
         System.out.println("useLOOK");
 
@@ -98,7 +116,7 @@ public class DiskSchedulerTest {
     /**
      * Test of useCLOOK method, of class DiskScheduler.
      */
-    @Test(timeout=1000)
+    @Test()
     public void testUseCLOOK() {
         System.out.println("useCLOOK");
 
