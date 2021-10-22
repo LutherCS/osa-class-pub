@@ -18,7 +18,7 @@ public class ProcessScheduler {
 
     public ProcessScheduler() {
         this.readyQueue = new ArrayList<>();
-        this.rrQuantum;
+        this.rrQuantum = 0;
     }
 
     public void add(SimpleProcess newProcess) {
